@@ -1,0 +1,10 @@
+@host = http://localhost:3333/api/v1/jobs
+
+###
+GET {{host}}
+
+###
+POST {{host}}
+
+###
+GET {{host}}/asdasdasd

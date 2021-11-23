@@ -6,6 +6,9 @@ const app = express();
 // connect DB
 const connectDB = require('./db/connect');
 
+// importing middlewares
+const { auth } = require('./middleware/authentication');
+
 // routers
 const authRouter = require('./routes/auth.routes');
 const jobsRouter = require('./routes/jobs.routes');
@@ -23,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/jobs', jobsRouter);
+app.use('/api/v1/jobs', auth, jobsRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

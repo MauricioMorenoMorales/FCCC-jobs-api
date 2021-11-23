@@ -2,9 +2,17 @@
 
 ###
 GET {{host}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlkMDZlYjE3MmE2N2JmM2JjODY0YjgiLCJuYW1lIjoiam9objEiLCJpYXQiOjE2Mzc2ODA4NzUsImV4cCI6MTY0MDI3Mjg3NX0.dmI8IqQ1fvARtiTqqPBSfp2S0ykz4pD_qSFc8JV9T1s
 
 ###
 POST {{host}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlkMDZlYjE3MmE2N2JmM2JjODY0YjgiLCJuYW1lIjoiam9objEiLCJpYXQiOjE2Mzc2ODA4NzUsImV4cCI6MTY0MDI3Mjg3NX0.dmI8IqQ1fvARtiTqqPBSfp2S0ykz4pD_qSFc8JV9T1s
+Content-Type: application/json
+
+{
+	"company": "google",
+	"position": "intern"
+}
 
 ###
 GET {{host}}/asdasdasd

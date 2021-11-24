@@ -13,12 +13,12 @@ GET {{host}}
 Authorization: Bearer {{anna}}
 ### createJob
 POST {{host}}
-Authorization: Bearer {{peter}}
+Authorization: Bearer {{anna}}
 Content-Type: application/json
 
 {
-	"company": "Mercado Libre",
-	"position": "Software Engineer"
+	"company": "No company",
+	"position": "Job to delete"
 }
 
 ###
@@ -34,3 +34,7 @@ Content-Type: application/json
 	"company": "Amazon",
 	"position": "UX Designer"
 }
+
+### deleteJob
+DELETE {{host}}/619e58b9e45cad9364a35345
+Authorization: Bearer {{anna}}

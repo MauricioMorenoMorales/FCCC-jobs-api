@@ -1,18 +1,36 @@
 @host = http://localhost:3333/api/v1/jobs
 
-###
-GET {{host}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlkMDZlYjE3MmE2N2JmM2JjODY0YjgiLCJuYW1lIjoiam9objEiLCJpYXQiOjE2Mzc2ODA4NzUsImV4cCI6MTY0MDI3Mjg3NX0.dmI8IqQ1fvARtiTqqPBSfp2S0ykz4pD_qSFc8JV9T1s
+# Users available
+@anna = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTllNGU1NTZjZWNiMzQ1YzIwYzI1MWUiLCJuYW1lIjoiQW5uYSIsImlhdCI6MTYzNzc2NDY5NCwiZXhwIjoxNjQwMzU2Njk0fQ.4i1zRySVz_sClrx3eadkp89jDkPcAc-NW7U0aJOdyDI
+@john = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlkMDZlYjE3MmE2N2JmM2JjODY0YjgiLCJuYW1lIjoiam9objEiLCJpYXQiOjE2Mzc2ODA4NzUsImV4cCI6MTY0MDI3Mjg3NX0.dmI8IqQ1fvARtiTqqPBSfp2S0ykz4pD_qSFc8JV9T1s
+@peter = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTllNTA1MjZjZWNiMzQ1YzIwYzI1MmEiLCJuYW1lIjoiUGV0ZXIiLCJpYXQiOjE2Mzc3NjUyMDMsImV4cCI6MTY0MDM1NzIwM30.X19Ezf6WgV20Dmz1f1PvmT3X5xrwbCh4pOnd6JxcXJA
 
-###
+@annaJob = 619e4fba6cecb345c20c2526
+@johnJob = 619d0e79b6eaeeefa95bac26
+
+### 
+GET {{host}}
+Authorization: Bearer {{anna}}
+### createJob
 POST {{host}}
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MTlkMDZlYjE3MmE2N2JmM2JjODY0YjgiLCJuYW1lIjoiam9objEiLCJpYXQiOjE2Mzc2ODA4NzUsImV4cCI6MTY0MDI3Mjg3NX0.dmI8IqQ1fvARtiTqqPBSfp2S0ykz4pD_qSFc8JV9T1s
+Authorization: Bearer {{peter}}
 Content-Type: application/json
 
 {
-	"company": "google",
-	"position": "intern"
+	"company": "Mercado Libre",
+	"position": "Software Engineer"
 }
 
 ###
-GET {{host}}/asdasdasd
+GET {{host}}/{{annaJob}}
+Authorization: Bearer {{anna}}
+
+### updateJob
+PATCH {{host}}/{{annaJob}}
+Authorization: Bearer {{anna}}
+Content-Type: application/json
+
+{
+	"company": "Amazon",
+	"position": "UX Designer"
+}
